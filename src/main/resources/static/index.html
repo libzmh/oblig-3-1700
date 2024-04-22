@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous" type="application/javascript"></script>
+  <style>
+    .error {
+      color: red;
+    }
+  </style>
+  <script src="kino.js"></script>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <h3>Ticket buying form</h3>
+      <form class="form">
+        <div class="form-group">
+          <label for="movie">Select a Movie:</label>
+          <select id="movie" required>
+            <option value="">Select Movie</option>
+            <option value="Star wars">Star wars</option>
+            <option value="Kill Bill">Kill Bill</option>
+            <option value="Django unchained">Django unchained</option>
+            <option value="Snatch">Snatch</option>
+          </select>
+          <span id="movieError" class="error"></span>
+        </div>
+        <div class="form-group">
+          <label for="tickets">Number of Tickets:</label>
+          <input type="number" id="tickets" min="1" required>
+          <span id="ticketsError" class="error"></span>
+        </div>
+        <div class="form-group">
+          <label for="firstname">First Name:</label>
+          <input type="text" id="firstname" required>
+          <span id="firstnameError" class="error"></span>
+        </div>
+        <div class="form-group">
+          <label for="surname">Surname:</label>
+          <input type="text" id="surname" required>
+          <span id="surnameError" class="error"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" required>
+          <span id="emailError" class="error"></span>
+        </div>
+        <div class="form-group">
+          <label for="telephone">Telephone:</label>
+          <input type="tel" id="telephone">
+          <span id="telephoneError" class="error"></span>
+        </div>
+      </form>
+      <button class="btn btn-primary" onclick="buyTickets()">Registrer</button><br/>
+    </div>
+    <div class="col-md-8">
+      <h3>Alle kundene:</h3>
+      <div id="ticketTableBody" class="table table-striped"></div>
+      <button class="btn btn-danger" onclick="deleteAllTickets()">Delete all tickets</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
